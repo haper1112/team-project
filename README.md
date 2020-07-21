@@ -25,3 +25,33 @@
 X: 빨간색 / 
 O: 백색 /
 W: 파란색 
+
+``` 
+def sense (update, context) : 
+sense = sense Hat()
+
+x = [255, 0, 0]
+o = [255, 255, 255]
+w = [0, 84, 255]
+question_mark = [
+o, o, o, o, o, o, o, o, 
+o, o, o, o, o, o, o, o, 
+o, o, o, x, x, o, o, o,
+o, o, x, x, x, x, o, o,
+o, o, w, w, w, w, o, o, 
+o, o, o, w, w, o, o, o, 
+o, o, o, o, o, o, o, o,
+o, o, o, o, o, o, o, o
+]
+sense. set_pixels(question_mark)
+time,sleep(2)
+
+sense.clear(255, 0, 0)
+
+def off (update, context) : 
+
+def off (update, context) :
+sense = senseHat ()
+sense.clear(0, 0, 0)
+```
+
