@@ -19,6 +19,45 @@
 1. 인체감지센서, 카메라 
 * 라즈베리파이 3B+ 인체 감지 센서 실행, 카메라 모듈에 카메라 촬영 및 캡처 성공
 
+```
+#!/usr/bin/python
+import RPi.HPIO as GPIO
+import time, sys, serial
+from picamera impirt picamera 
+#import telepot
+import telegram 
+from telegram.ext import Updater
+import logging
+
+GPIO.setmode(GPIO.BCM)
+
+pirpin = 4
+GPIO.setup(pirpin, GPIO.IN, GPIO,PUD_UP)
+camera = piCamera()
+#counter = 1 
+
+while True:
+    if GPIO.input(pirpin) == GPIO.LOW:
+       try:
+           #camera.rotation = 180
+           camera.resolution = (2592, 1944)
+           camera.framerate = 15
+           camera.start_preview()
+           camera.brightness = 55
+           #time.sleep(1)
+           camera.capture('image.jpg')
+           #counter = counter + 1
+           camera.stop_preview()
+           bot = telegram.Bot('1324949291:AAG2ezp_ULGNX6qGELySULM88ZWIxfqQ_o')
+           chat_id = 1118932942
+           bot.sendMessage(chat_id=chat_id, text= "Motion Detected!")
+           #photo = open('./image.jpg','rb')
+           #bot.sendphoto(tel_id, photo)
+      except:
+      cmaera.stop_preview()
+  time.sleep(3)
+  ```
+
 2. LED 
 * 라즈베리파이 통합센서 이용하여 인체감지센서를 이용한 LED 조명  
 > RGB / 
